@@ -35,7 +35,7 @@ SELECT univ_name FROM UNIVERSITY WHERE rating > 300;
 SELECT surname, firstname, kurs FROM STUDENT where stipend >= 100 AND city = 'Воронеж';
 
 -- 11
-SELECT * FROM STUDENT WHERE (stipend < 100 OR NOT ( birthday >= '10-03-1980' and student_id > 103));
+SELECT * FROM STUDENT WHERE (stipend < 100 OR NOT (birthday >= '10-03-1980' and student_id > 103));
 
 -- 12
 SELECT * FROM STUDENT where NOT ((birthday = '10-03-1980' or stipend > 100) and student_id >= 103);
