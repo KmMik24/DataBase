@@ -5,7 +5,7 @@
 */
 
 -- 1
-SELECT concat(student_id,';', UPPER(surname),';', UPPER(firstname),';', stipend,';', kurs,';', city,';', birthday,';', univ_id) FROM STUDENT;
+SELECT CONCAT(student_id,';', UPPER(surname),';', UPPER(firstname),';', stipend,';', kurs,';', city,';', birthday,';', univ_id) FROM STUDENT;
 
 -- 2
 SELECT CONCAT(SUBSTRING(firstname, 1, 1),'.', UPPER(surname),';', 'местожительства-', UPPER(city),';', 'родился-', CONVERT(Varchar(10), birthday, 105) ) FROM STUDENT;
