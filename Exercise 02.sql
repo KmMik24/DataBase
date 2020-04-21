@@ -19,5 +19,5 @@ SELECT * FROM STUDENT WHERE firstname LIKE 'И%' OR firstname LIKE 'С%';
 -- 5
 SELECT * FROM EXAM_MARKS WHERE mark is NULL;
 
---6
+-- 6
 SELECT * FROM EXAM_MARKS WHERE mark is NOT NULL;
