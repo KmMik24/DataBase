@@ -24,4 +24,4 @@ INSERT INTO SUBJ_LECT (lecturer_id, subj_id)
     VALUES (276, 276);
 
 INSERT INTO SUBJ_LECT (lecturer_id, subj_id)
-    VALUES (328, 328); 
+    VALUES (328, 328);
