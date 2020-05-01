@@ -3,7 +3,7 @@
     ISBN 985-475-004-3
     Page 19. STUDENT Table.
 */
-
+ 
 CREATE TABLE STUDENT (
     student_id  INTEGER      NOT NULL Primary key,
     surname     NVARCHAR(20) NOT NULL,
