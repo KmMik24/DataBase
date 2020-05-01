@@ -27,4 +27,4 @@ INSERT INTO EXAM_MARKS (exam_id, student_id, subj_id, mark, exam_date)
     VALUES (639, 55, 22, NULL,'1999-06-22');
 
 INSERT INTO EXAM_MARKS (exam_id, student_id, subj_id, mark, exam_date) 
-    VALUES (43, 6, 22, 4,'2000-01-18');
+    VALUES (43, 6, 22, 4,'2000-01-18'); 
