@@ -28,4 +28,4 @@ INSERT INTO LECTURER (lecturer_id, surname, firstname, city, univ_id)
     VALUES (276, 'Николаев', 'Виктор', 'Воронеж', 10);
 
 INSERT INTO LECTURER (lecturer_id, surname, firstname, city, univ_id)
-    VALUES (328, 'Сорокин', 'Андрей', 'Орел', 10);
+    VALUES (328, 'Сорокин', 'Андрей', 'Орел', 10); 
