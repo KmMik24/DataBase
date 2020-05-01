@@ -26,4 +26,4 @@ INSERT INTO SUBJECTS (subj_id, subj_name, hour, semester)
     VALUES (94, 'Английский', 56, 3);
 
 INSERT INTO SUBJECTS (subj_id, subj_name, hour, semester)
-    VALUES (73, 'Физкультура', 34, 5);
+    VALUES (73, 'Физкультура', 34, 5); 
