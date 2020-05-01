@@ -29,4 +29,4 @@ INSERT INTO UNIVERSITY (univ_id, univ_name, rating, city)
     VALUES (15, 'ТГУ', 368, 'Томск');
 
 INSERT INTO UNIVERSITY (univ_id, univ_name, rating, city)
-    VALUES (18, 'ВГМА', 327, 'Воронеж');
+    VALUES (18, 'ВГМА', 327, 'Воронеж'); 
