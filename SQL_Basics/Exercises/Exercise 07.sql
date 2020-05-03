@@ -5,3 +5,11 @@
 */
 
 -- 1
+SELECT * 
+FROM STUDENT A 
+WHERE EXISTS 
+    (SELECT univ_id 
+    FROM UNIVERSITY B
+    WHERE rating > 300
+    AND A.univ_id = B.univ_id);
+
