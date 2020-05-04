@@ -41,4 +41,7 @@ WHERE EXISTS
         WHERE C.subj_id = A.subj_id
         AND C.student_id <> B.student_id)
     );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0df2d7e9fbfc0dd6e72dc918eb5f1afc78c0fb9d

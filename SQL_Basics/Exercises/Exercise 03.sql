@@ -18,7 +18,7 @@ SELECT CONCAT(firstname,' ', surname, ' родился в ', year(birthday), ' �
 
 -- 5
 SELECT surname, firstname, stipend*100 FROM STUDENT;
-
+ 
 -- 6
 SELECT CONCAT(UPPER(firstname),' ', UPPER(surname), ' родился/ась в ', year(birthday), ' году') FROM STUDENT WHERE kurs IN (1,2,4);
 

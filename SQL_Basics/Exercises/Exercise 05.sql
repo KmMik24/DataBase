@@ -4,7 +4,7 @@
     Exercises from page 50
 */
 
--- 1 (a)
+-- 1 (a) 
 SELECT student_id, surname, stipend*1.2 FROM STUDENT ORDER BY 3;
 
 -- 1 (б)

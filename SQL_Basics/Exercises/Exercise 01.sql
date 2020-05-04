@@ -39,15 +39,3 @@ SELECT * FROM STUDENT WHERE (stipend < 100 OR NOT (birthday >= '10-03-1980' and 
 
 -- 12
 SELECT * FROM STUDENT where NOT ((birthday = '10-03-1980' or stipend > 100) and student_id >= 103);
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,7 +5,7 @@
 */
 
 -- 1
-SELECT COUNT(student_id) FROM EXAM_MARKS WHERE subj_id IN (22);
+SELECT COUNT(student_id) FROM EXAM_MARKS WHERE subj_id IN (22); 
 
 -- 2
 SELECT COUNT(DISTINCT subj_id) FROM EXAM_MARKS;

@@ -34,7 +34,7 @@ WHERE mark <
 SELECT student_id, COUNT(subj_id) 
 FROM EXAM_MARKS 
 GROUP BY student_id 
-HAVING COUNT(subj_id) > 1;
+HAVING COUNT(subj_id) > 1; 
 
 -- 5
 SELECT student_id, firstname, stipend 
