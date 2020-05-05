@@ -5,3 +5,14 @@
 */
 
 -- 1
+SELECT univ_name, city, rating, 'Высокий'
+    FROM UNIVERSITY
+    WHERE rating >= 300
+UNION
+SELECT univ_name, city, rating, 'Низкий'
+    FROM UNIVERSITY
+    WHERE rating < 300;
+
+-- 2
+
+        
