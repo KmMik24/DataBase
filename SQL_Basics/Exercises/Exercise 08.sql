@@ -34,7 +34,7 @@ WHERE mark > ALL
 	WHERE subj_id = 10);
 
 -- 4
-SELECT * 
+SELECT *
 FROM EXAM_MARKS
 WHERE mark > 
 	(SELECT MAX(mark)
