@@ -1,7 +1,7 @@
 /*
     SQL В ПРИМЕРАХ И ЗАДАЧАХ.
     ISBN 985-475-004-3
-    Exercises from page 63
+    Exercises from page 62
 */
 
 -- 1
@@ -39,4 +39,4 @@ FROM EXAM_MARKS
 WHERE mark > 
 	(SELECT MAX(mark)
 	FROM EXAM_MARKS 
-	WHERE subj_id = 10);
+	WHERE subj_id = 10); 
