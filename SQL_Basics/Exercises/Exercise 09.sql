@@ -66,3 +66,5 @@ SELECT surname, firstname, 'Студент'
         WHERE univ_name = 'ВГУ')
 ORDER BY 3;
 
+ 
+        
