@@ -39,4 +39,4 @@ FROM EXAM_MARKS
 WHERE mark > 
 	(SELECT MAX(mark)
 	FROM EXAM_MARKS 
-	WHERE subj_id = 10);
+	WHERE subj_id = 10); 
