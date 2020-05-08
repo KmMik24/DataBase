@@ -80,8 +80,110 @@ WHERE A.lecturer_id = B.lecturer_id
 AND B.subj_id = C.subj_id
 AND semester = 1;
 
+-- 11
+SELECT surname, firstname
+FROM STUDENT A JOIN UNIVERSITY B
+ON A.univ_id = B.univ_id
+AND A.city != B.city;
 
+-- 12
+SELECT COUNT(exam_id)
+FROM EXAM_MARKS
+WHERE student_id = 32
+AND mark > 3;
 
+-- 13
+SELECT surname, firstname
+FROM SUBJ_LECT A, SUBJ_LECT B, LECTURER C
+WHERE A.lecturer_id = C.lecturer_id
+AND B.lecturer_id = C.lecturer_id 
+AND A.lecturer_id = B.lecturer_id
+AND A.subj_id < B.subj_id;
 
+-- 14
+SELECT surname, firstname
+FROM SUBJ_LECT A, SUBJECTS B, LECTURER C
+WHERE A.lecturer_id = C.lecturer_id
+AND A.subj_id = B.subj_id 
+AND B.semester < B.semester;
 
+-- 15
+SELECT subj_name 
+FROM SUBJ_LECT A, SUBJ_LECT B, SUBJECTS C
+WHERE A.subj_id = C.subj_id
+AND B.subj_id = C.subj_id 
+AND A.subj_id = B.subj_id
+AND A.lecturer_id < B.lecturer_id;
 
+-- 16
+SELECT  C.subj_name, A.surname, A.firstname, B.city 
+FROM LECTURER A, STUDENT B, SUBJECTS C, SUBJ_LECT D
+WHERE B.univ_id = 
+    (SELECT univ_id
+    FROM UNIVERSITY
+    WHERE univ_name = 'ВГУ')
+AND A.univ_id = B.univ_id
+AND A.lecturer_id = D.lecturer_id
+AND C.subj_id = D.subj_id
+ORDER BY C.subj_name;
+
+-- 17
+SELECT hour
+FROM SUBJECTS A
+WHERE subj_id = 
+    (SELECT subj_id
+    FROM SUBJ_LECT B
+    WHERE A.subj_id = B.subj_id 
+    AND lecturer_id =
+        (SELECT lecturer_id
+        FROM LECTURER C
+        WHERE surname = 'Лагутин'
+        AND B.lecturer_id = C.lecturer_id)
+    );
+
+-- 18
+SELECT surname
+FROM LECTURER A, SUBJ_LECT B
+WHERE A.lecturer_id = B.lecturer_id
+AND subj_id = 
+    (SELECT subj_id
+    FROM SUBJ_LECT С
+    WHERE lecturer_id =
+        (SELECT lecturer_id
+        FROM LECTURER
+        WHERE surname = 'Сорокин')
+    )
+AND A.surname != 'Сорокин';
+
+-- 19
+SELECT DISTINCT surname
+FROM LECTURER A, SUBJ_LECT B, SUBJECTS
+WHERE A.lecturer_id = B.lecturer_id
+AND hour >
+    (SELECT hour
+    FROM SUBJECTS
+    WHERE subj_id = 
+        (SELECT subj_id
+        FROM SUBJ_LECT
+        WHERE lecturer_id =
+            (SELECT lecturer_id
+            FROM LECTURER
+            WHERE surname = 'Колесников')
+        )
+    )
+AND A.surname != 'Колесников';
+
+-- 20
+SELECT surname, firstname
+FROM LECTURER A, SUBJ_LECT B
+WHERE subj_id = 
+    (SELECT subj_id
+    FROM SUBJ_LECT C
+    WHERE C.subj_id = B.subj_id
+    AND lecturer_id =
+        (SELECT lecturer_id
+        FROM LECTURER D
+        WHERE surname = 'Сорокин')
+AND A.lecturer_id = B.lecturer_id
+AND surname != 'Сорокин');
+    
