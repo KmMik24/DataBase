@@ -186,4 +186,62 @@ WHERE subj_id =
         WHERE surname = 'Сорокин')
 AND A.lecturer_id = B.lecturer_id
 AND surname != 'Сорокин');
-    
+
+-- 21
+SELECT surname
+FROM LECTURER A
+WHERE univ_id = 
+    (SELECT univ_id
+    FROM UNIVERSITY
+    WHERE rating < 300);
+
+-- 22
+SELECT univ_name
+FROM UNIVERSITY A
+WHERE A.city = 'Москва'
+AND A.rating <
+    (SELECT rating
+    FROM UNIVERSITY B
+    WHERE B.univ_name = 'ВГУ');
+
+-- 23
+SELECT surname
+FROM STUDENT A
+WHERE univ_id =
+    (SELECT univ_id
+    FROM UNIVERSITY B
+    WHERE A.univ_id = B.univ_id
+    AND B.city = 
+        (SELECT TOP(1) city 
+        FROM UNIVERSITY 
+        ORDER BY city)
+    );
+
+-- 24
+SELECT surname, firstname, A.student_id
+FROM STUDENT A
+WHERE student_id =
+    (SELECT student_id
+    FROM EXAM_MARKS B
+    WHERE A.student_id = B.student_id
+    GROUP BY B.student_id
+    HAVING AVG(mark) = 4);
+
+-- 25
+SELECT SUM(hour)
+FROM SUBJECTS A
+WHERE A.subj_id = 
+    (SELECT B.subj_id
+    FROM SUBJ_LECT B
+    WHERE A.subj_id = B.subj_id
+    AND B.lecturer_id =
+        (SELECT C.lecturer_id
+        FROM LECTURER C
+        WHERE B.lecturer_id = C.lecturer_id
+        AND univ_id = 
+            (SELECT univ_id
+            FROM UNIVERSITY
+            WHERE univ_name = 'ВГУ')
+    )
+GROUP BY subj_id
+HAVING semester < 3);
