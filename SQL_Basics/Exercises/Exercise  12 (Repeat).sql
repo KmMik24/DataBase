@@ -242,6 +242,69 @@ WHERE A.subj_id =
             (SELECT univ_id
             FROM UNIVERSITY
             WHERE univ_name = 'ВГУ')
+        )
     )
-GROUP BY subj_id
-HAVING semester < 3);
+GROUP BY subj_id, semester
+HAVING semester < 3;
+
+-- 26
+SELECT AVG(hour)
+FROM SUBJECTS A, SUBJ_LECT B
+WHERE A.subj_id = B.subj_id
+AND B.lecturer_id =
+    (SELECT lecturer_id
+    FROM LECTURER C
+    WHERE B.lecturer_id = C.lecturer_id
+    AND univ_id = 
+        (SELECT univ_id
+        FROM UNIVERSITY
+        WHERE univ_name = 'ВГУ')
+    )
+GROUP BY A.subj_id, semester
+HAVING semester BETWEEN 2 AND 5;
+
+-- 27
+SELECT COUNT(A.student_id)
+FROM STUDENT A, UNIVERSITY B
+WHERE 2 = ANY
+    (SELECT mark
+    FROM EXAM_MARKS B
+    WHERE A.student_id = B.student_id)
+AND A.univ_id = B.univ_id
+AND A.city != B.city;
+
+-- 28
+SELECT surname, firstname
+FROM STUDENT A, UNIVERSITY B
+WHERE A.student_id =
+    (SELECT C.student_id
+    FROM EXAM_MARKS C
+    WHERE A.student_id = C.student_id
+    AND 5 = ALL 
+        (SELECT mark 
+        FROM EXAM_MARKS D
+        WHERE C.student_id = D.student_id)
+    )
+AND A.univ_id = B.univ_id
+AND A.city != B.city;
+
+-- 29
+SELECT surname, firstname
+FROM STUDENT A, UNIVERSITY B
+WHERE 2 <= 
+    (SELECT COUNT(mark)
+    FROM EXAM_MARKS C
+    WHERE A.student_id = C.student_id
+    AND mark = 5)
+AND A.univ_id = B.univ_id
+AND A.city != B.city;
+
+-- 30
+SELECT surname
+FROM STUDENT JOIN EXAM_MARKS
+ON STUDENT.student_id = EXAM_MARKS.student_id
+AND subj_id = 10
+AND mark > 2;
+
+-- 31
+-- УЖЕ НЕ ОХОТО ПОЧТИ ТО ЖЕ САМОЕ
