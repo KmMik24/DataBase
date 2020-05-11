@@ -26,4 +26,3 @@ WHERE city = 'Воронеж';
 UPDATE STUDENT
 SET city = 'Воронеж'
 WHERE surname = 'Иванов';
-
