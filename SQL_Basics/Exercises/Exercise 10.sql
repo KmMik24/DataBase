@@ -1,8 +1,8 @@
-  /*
-    SQL В ПРИМЕРАХ И ЗАДАЧАХ.
-    ISBN 985-475-004-3
-    Exercises from page 72
-  */
+/*
+  SQL В ПРИМЕРАХ И ЗАДАЧАХ.
+  ISBN 985-475-004-3
+  Exercises from page 72
+*/
 
 -- 1
 SELECT surname, subj_id
