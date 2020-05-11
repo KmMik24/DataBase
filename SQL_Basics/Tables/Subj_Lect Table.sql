@@ -32,3 +32,4 @@ INSERT INTO SUBJ_LECT (lecturer_id, subj_id)
 
 INSERT INTO SUBJ_LECT (lecturer_id, subj_id)
     VALUES (328, 10);
+    
