@@ -21,4 +21,3 @@ SELECT A.univ_name, A.city
 FROM UNIVERSITY A, UNIVERSITY B
 WHERE A.rating >= B.rating
 AND B.univ_name = 'ВГУ'
-
